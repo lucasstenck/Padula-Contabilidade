@@ -1,0 +1,1204 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&family=Michroma&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Reset básico e box-sizing para todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Regras de contenção para HTML e Body - Garantem que o viewport não tenha rolagem horizontal inesperada */
+html, body {
+    width: 100%;
+    max-width: 100vw; /* Garante que nunca ultrapasse a largura da viewport */
+    overflow-x: hidden; /* CRÍTICO: Previne rolagem horizontal */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1f1f1f;
+}
+
+/* --- Header e Navegação --- */
+header {
+    background-color: #1f1f1f;
+    padding: 19px 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Garante que o header ocupe 100% */
+    overflow: hidden; /* Previne que elementos vazem do header */
+    box-sizing: border-box;
+}
+
+.logo img {
+    width: 220px;
+    height: auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+    gap: 15px; /* Espaçamento entre logo e botão */
+    box-sizing: border-box;
+}
+
+.main-nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    list-style-type: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #f1f1f1;
+    font-size: 20px;
+    padding: 10px 15px;
+    display: block;
+}
+
+.submenu {
+    position: relative;
+}
+
+.submenu .submenu-items {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #1f1f1f;
+    list-style-type: none;
+    padding: 10px 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    min-width: 220px;
+}
+
+.submenu.active-submenu .submenu-items {
+    display: block;
+}
+
+.submenu-items li {
+    padding: 8px 15px;
+}
+
+.submenu-items li a {
+    color: #ffffff;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.arrow {
+    margin-left: 5px;
+}
+
+.client-access-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.client-access {
+    list-style-type: none;
+}
+
+.client-access a {
+    background-color: #0073e6;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 17px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.menu a:hover, .submenu-items li a:hover {
+    background-color: #1f1f1f;
+    color: #0073e6;
+}
+
+.client-access a:hover {
+    background-color: #005bb5;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 30px;
+    color: #f1f1f1;
+}
+
+/* Ajustes de Navegação para telas entre 769px e 1135px */
+@media (min-width: 769px) and (max-width: 1135px) {
+    
+    .hamburger {
+        display: none; /* Garante que o hambúrguer não apareça nesta faixa */
+    }
+
+    nav {
+        flex-direction: column; /* Empilha logo e menu */
+        align-items: center;
+        gap: 15px;
+        padding: 0 15px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .nav-left {
+        width: 100%;
+        text-align: center;
+    }
+
+    .main-nav-links {
+        display: flex;
+        flex-direction: column; /* Garante que os itens do menu fiquem em coluna */
+        width: 100%;
+        position: static;
+        background-color: transparent;
+        box-shadow: none;
+        z-index: auto;
+        padding: 10px 0;
+        align-items: center;
+        overflow-x: hidden; /* PREVINE SCROLL HORIZONTAL */
+    }
+
+    .main-nav-links.active {
+        display: flex;
+    }
+
+    .menu {
+        flex-direction: column; /* Itens do menu em coluna */
+        gap: 5px;
+        width: 100%;
+        flex-wrap: nowrap;
+        overflow-x: hidden; /* PREVINE SCROLL HORIZONTAL */
+        padding: 0;
+        list-style: none;
+    }
+
+    .menu::-webkit-scrollbar {
+        display: none;
+    }
+    .menu {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .menu a {
+        padding: 8px 0;
+        font-size: 15px;
+        white-space: nowrap;
+        text-align: center;
+        width: 100%;
+        display: block;
+    }
+
+    .submenu .submenu-items {
+        display: none;
+        position: static;
+        width: 100%;
+        background-color: #1f1f1f;
+        box-shadow: none;
+        padding: 5px 0;
+        list-style: none;
+        text-align: left;
+    }
+
+    .submenu.active-submenu .submenu-items {
+        display: block;
+    }
+    .submenu.active-submenu .submenu-items li a {
+        padding-left: 25px;
+        text-align: left;
+        font-size: 14px;
+    }
+
+    .client-access-wrapper {
+        margin-top: 15px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .client-access {
+        padding: 0;
+        list-style: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .client-access a {
+        padding: 10px 20px;
+        font-size: 16px;
+        white-space: nowrap;
+        display: inline-block;
+        max-width: 90%;
+    }
+    #carousel {
+        height: 58vh;
+    }
+}
+
+/* Ajustes de Navegação para telas acima de 1100px (desktop menu hover) */
+@media (min-width: 1100px) {
+    .submenu:hover .submenu-items {
+        display: block;
+    }
+}
+
+/* --- Ajustes Gerais para Telas até 768px (Tablets e Celulares) --- */
+@media (max-width: 768px) {
+    /* Header e Navegação */
+    .hamburger {
+        display: flex; /* Mostra o ícone de hambúrguer */
+        margin-left: auto; /* Empurra para a direita */
+    }
+
+   .main-nav-links {
+        display: none; /* Esconde o menu por padrão */
+        flex-direction: column; /* Menu em coluna */
+        width: 100%;
+        position: absolute;
+        top: 90px; /* Posiciona abaixo do header */
+        left: 0;
+        background-color: #1f1f1f;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        z-index: 99;
+        padding: 20px 0;
+        align-items: center;
+        overflow-x: hidden; /* PREVINE SCROLL HORIZONTAL */
+    }
+
+    .main-nav-links.active {
+        display: flex; /* Mostra o menu quando ativo */
+    }
+
+    .menu {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .submenu .submenu-items {
+        position: static; /* Submenus se expandem in-line */
+        width: 100%;
+        box-shadow: none;
+        background-color: #222222;
+        padding: 0;
+        display: none; /* Oculto por padrão, expandido via JS */
+    }
+
+    .submenu.active-submenu .submenu-items {
+        display: block; /* Mostra o submenu quando ativo */
+    }
+
+    .submenu-items li a {
+        padding: 8px 0;
+        font-size: 13px;
+    }
+
+    .client-access-wrapper {
+        margin-top: 15px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .client-access {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Carrossel */
+    #carousel {
+        height: 65vh; /* Ajuste inicial para telas menores que 768px */
+    }
+    .carousel-container {
+        height: 100%; /* Garante que o contêiner interno preencha a altura definida no #carousel */
+    }
+    button {
+        padding: 12px;
+    }
+
+    /* Seção de Serviços */
+    #services-section {
+        padding: 40px 15px; /* Reduz padding lateral */
+    }
+
+    #services-section h2 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr; /* Uma coluna para serviços */
+        gap: 20px;
+        max-width: 100%; /* Garante que a grid não limite a largura */
+    }
+
+    .service-item {
+        margin: 0 auto; /* Centraliza itens */
+        max-width: 300px; /* Limita largura para evitar que fiquem muito largos */
+    }
+
+    .service-image {
+        height: 200px;
+    }
+
+    .service-item h3 {
+        font-size: 1.2em;
+        min-height: auto;
+        margin: 0 10px;
+    }
+
+    /* Seção de Imagem Única */
+    #single-image-section {
+        margin: 0;
+        width: 100%; /* Garante 100% de largura */
+    }
+
+    #single-image-section img {
+        border-radius: 0;
+        /* Garante que a imagem não vaze */
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Rodapé */
+    #main-footer {
+        padding: 40px 15px 20px; /* Ajusta o padding lateral do footer principal */
+    }
+    .footer-content {
+        flex-direction: column; /* Colunas do rodapé empilhadas */
+        gap: 20px;
+        margin-bottom: 20px;
+        width: 100%;
+        padding: 0; /* Remove padding lateral duplicado se já houver no #main-footer */
+    }
+
+    .footer-column {
+        min-width: unset;
+        padding: 10px;
+    }
+
+    .footer-column h3 {
+        font-size: 1.1em;
+        margin-bottom: 10px;
+    }
+
+    .footer-column p {
+        font-size: 0.9em;
+    }
+
+    .footer-button {
+        padding: 8px 20px;
+        font-size: 0.85em;
+    }
+
+    .footer-bottom {
+        padding-top: 15px;
+        margin-top: 20px;
+        font-size: 0.75em;
+    }
+
+    /* Botão WhatsApp - permanece fixo */
+    #whatsapp-button {
+        bottom: 10px; /* Ajusta um pouco para cima para celulares */
+        right: 10px; /* Ajusta um pouco para a esquerda */
+        /* Garante que sempre fique no canto direito */
+        left: auto !important;
+        margin-left: auto !important;
+        margin-right: 0 !important;
+    }
+    #whatsapp-button img {
+        width: 50px; /* Reduz o tamanho do botão no celular */
+        height: 50px;
+    }
+}
+
+/* --- Carrossel CSS (Regras Base e Breakpoints Detalhados) --- */
+#carousel {
+    position: relative;
+    width: 100%;
+    max-width: 100vw; /* Garante que nunca ultrapasse a largura da viewport */
+    height: 90vh; /* Altura padrão para telas maiores (>768px) */
+    overflow: hidden; /* Previne que elementos vazem */
+    box-sizing: border-box;
+    margin: 0 auto; /* Centraliza o carrossel */
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%; /* Garante que não ultrapasse o pai */
+    height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.carousel-images {
+    position: relative;
+    width: 100%;
+    max-width: 100%; /* Garante que não ultrapasse o pai */
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-images:active {
+    cursor: grabbing;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Essencial: sempre 100% da altura do pai */
+    background-size: cover; /* Redimensiona para cobrir, pode cortar */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+    background-color: #1f1f1f; /* Cor de fundo para preencher espaços vazios */
+    opacity: 0; /* Começa oculto */
+    transition: opacity 1s ease; /* Transição fade */
+    z-index: 0;
+    box-sizing: border-box;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+/* Botões de navegação do Carrossel */
+button {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgb(199, 199, 199);
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 10;
+    transform: translateY(-50%);
+    box-sizing: border-box;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Media Queries adicionais para o Carrossel (do maior para o menor) */
+
+@media (max-width: 1200px) {
+    #carousel {
+        width: 100%;
+        max-width: 100vw;
+        height: 85vh;
+    }
+}
+
+@media (max-width: 1024px) {
+    #carousel {
+        width: 100%;
+        max-width: 100vw;
+        height: 80vh;
+    }
+}
+
+@media (max-width: 900px) {
+    #carousel {
+        width: 100%;
+        max-width: 100vw;
+        height: 75vh;
+    }
+}
+
+@media (max-width: 767px) {
+    #carousel {
+        width: 100%;
+        max-width: 100vw;
+        height: 58vh;
+    }
+    
+    .carousel-container {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .carousel-images {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .carousel-slide {
+        background-size: contain; /* Evita cortes das imagens */
+        background-position: center;
+        background-color: #1f1f1f; /* Cor de fundo para preencher espaços vazios */
+    }
+}
+
+@media (max-width: 650px) {
+    #carousel {
+        width: 100%;
+        max-width: 100vw;
+        height: 55vh;
+    }
+    
+    .carousel-slide {
+        background-size: contain;
+        background-position: center;
+        background-color: #1f1f1f;
+    }
+}
+
+@media (max-width: 600px) {
+    #carousel {
+        width: 100%;
+        max-width: 100vw;
+        height: 52vh;
+    }
+    
+    .carousel-slide {
+        background-size: contain;
+        background-position: center;
+        background-color: #1f1f1f;
+    }
+}
+
+@media (max-width: 550px) {
+    #carousel {
+        width: 100%;
+        max-width: 100vw;
+        height: 49vh;
+    }
+    
+    .carousel-slide {
+        background-size: contain;
+        background-position: center;
+        background-color: #1f1f1f;
+    }
+}
+
+@media (max-width: 500px) {
+    #carousel {
+        width: 100%;
+        max-width: 100vw;
+        height: 46vh;
+    }
+    
+    .carousel-slide {
+        background-size: contain;
+        background-position: center;
+        background-color: #1f1f1f;
+    }
+}
+
+/* --- Ajustes específicos para telas MUITO pequenas (celulares menores, incluindo o bug de 480px) --- */
+@media (max-width: 480px) {
+    /* **NOVAS ADIÇÕES / REFORÇOS** */
+    /* Garante que o body e o html nunca gerem scroll horizontal */
+    html, body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Força todos os elementos de bloco a ocuparem 100% da largura, removendo margens/paddings externos */
+    body > *, header, nav, .main-nav-links, .carousel-container, .services-grid, #single-image-section, #main-footer, .footer-content {
+        width: 100%;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        box-sizing: border-box;
+    }
+
+    /* Aplica padding interno às seções que precisam de espaço para o conteúdo sem quebrar o layout */
+    header {
+        padding: 15px 10px;
+    }
+    #services-section {
+        padding: 25px 10px; /* Reduzido de 40px para 25px */
+    }
+    #main-footer {
+        padding: 30px 10px 20px; /* Reduzido de 40px para 30px */
+    }
+    
+    /* Carrossel específico para telas muito pequenas */
+    #carousel {
+        width: 100%;
+        max-width: 100vw;
+        height: 50vh; /* Altura ajustada para celulares menores */
+        overflow: hidden;
+    }
+    
+    .carousel-container {
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+    }
+    
+    .carousel-images {
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+    }
+    
+    .carousel-slide {
+        width: 100%;
+        height: 100%;
+        background-size: contain; /* Evita cortes das imagens */
+        background-position: center;
+        background-color: #1f1f1f; /* Cor de fundo para preencher espaços vazios */
+    }
+    
+    button {
+        padding: 8px;
+    }
+
+    .service-item {
+        max-width: 100%; /* Permite que o item ocupe a largura total disponível na grid 1fr */
+        padding-bottom: 15px; /* Reduzido para telas menores */
+    }
+    
+    /* Reduz espaçamento adicional em telas menores */
+    #services-section h2 {
+        margin-bottom: 15px; /* Reduzido para telas menores */
+    }
+    
+    .services-grid {
+        gap: 12px; /* Reduzido para telas menores */
+    }
+
+    /* Ajuste fino para os botões do carrossel */
+    button {
+        padding: 8px; /* Botões menores */
+        font-size: 1em; /* Tamanho da fonte dos botões */
+    }
+    .prev {
+        left: 5px; /* Mais perto da borda */
+    }
+    .next {
+        right: 5px; /* Mais perto da borda */
+    }
+    
+    /* Garante que o botão WhatsApp fique no canto direito */
+    #whatsapp-button {
+        right: 10px !important;
+        left: auto !important;
+        margin-left: auto !important;
+        margin-right: 0 !important;
+    }
+}
+
+@media (max-width: 450px) {
+    /* Header e navegação para telas muito pequenas */
+    header {
+        padding: 8px 10px;
+    }
+    
+    .logo img {
+        width: 140px; /* Logo menor para telas muito pequenas */
+    }
+    
+    /* Botão Acesso ao Cliente - Ajuste específico para evitar vazamento */
+    .client-access a {
+        padding: 6px 12px;
+        font-size: 12px;
+        white-space: nowrap;
+        border-radius: 20px;
+    }
+    
+    /* Navegação */
+    nav {
+        gap: 10px; /* Reduz o espaço entre logo e botão */
+    }
+    
+    /* Reduz espaçamento em telas menores */
+    #services-section {
+        padding: 20px 10px; /* Reduzido ainda mais */
+    }
+    
+    #services-section h2 {
+        margin-bottom: 12px; /* Reduzido ainda mais */
+    }
+    
+    .services-grid {
+        gap: 10px; /* Reduzido ainda mais */
+    }
+    
+    .service-item {
+        padding-bottom: 12px; /* Reduzido ainda mais */
+    }
+    
+    #carousel {
+        width: 100%;
+        max-width: 100vw;
+        height: 43vh;
+    }
+    
+    .carousel-container {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .carousel-images {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .carousel-slide {
+        background-size: contain;
+        background-position: center;
+        background-color: #1f1f1f;
+    }
+    
+    /* Garante que o botão WhatsApp fique no canto direito */
+    #whatsapp-button {
+        right: 10px !important;
+        left: auto !important;
+        margin-left: auto !important;
+        margin-right: 0 !important;
+    }
+}
+
+@media (max-width: 426px) {
+    /* Header e navegação para telas menores que 426px */
+    header {
+        padding: 6px 8px;
+    }
+    
+    .logo img {
+        width: 120px; /* Logo ainda menor */
+    }
+    
+    /* Botão Acesso ao Cliente - Ajuste específico para evitar vazamento */
+    .client-access a {
+        padding: 5px 10px;
+        font-size: 11px;
+        white-space: nowrap;
+        border-radius: 18px;
+    }
+    
+    /* Navegação */
+    nav {
+        gap: 8px; /* Reduz ainda mais o espaço entre logo e botão */
+    }
+    
+    /* Garante que o botão WhatsApp fique no canto direito */
+    #whatsapp-button {
+        right: 10px !important;
+        left: auto !important;
+        margin-left: auto !important;
+        margin-right: 0 !important;
+    }
+}
+
+@media (max-width: 400px) {
+    /* Header e navegação para telas muito pequenas */
+    header {
+        padding: 5px 6px;
+    }
+    
+    .logo img {
+        width: 100px; /* Logo mínimo */
+    }
+    
+    /* Botão Acesso ao Cliente - Ajuste final */
+    .client-access a {
+        padding: 4px 8px;
+        font-size: 10px;
+        white-space: nowrap;
+        border-radius: 15px;
+    }
+    
+    /* Navegação */
+    nav {
+        gap: 6px; /* Espaçamento mínimo */
+    }
+    
+    /* Reduz espaçamento em telas muito pequenas */
+    #services-section {
+        padding: 15px 10px; /* Reduzido ainda mais */
+    }
+    
+    #services-section h2 {
+        margin-bottom: 10px; /* Reduzido ainda mais */
+    }
+    
+    .services-grid {
+        gap: 8px; /* Reduzido ainda mais */
+    }
+    
+    .service-item {
+        padding-bottom: 10px; /* Reduzido ainda mais */
+    }
+    
+    #carousel {
+        width: 100%;
+        max-width: 100vw;
+        height: 40vh;
+    }
+    
+    .carousel-container {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .carousel-images {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .carousel-slide {
+        background-size: contain;
+        background-position: center;
+        background-color: #1f1f1f;
+    }
+    
+    /* Garante que o botão WhatsApp fique no canto direito */
+    #whatsapp-button {
+        right: 10px !important;
+        left: auto !important;
+        margin-left: auto !important;
+        margin-right: 0 !important;
+    }
+}
+
+@media (max-width: 350px) {
+    #carousel {
+        width: 100%;
+        max-width: 100vw;
+        height: 37vh;
+    }
+    
+    .carousel-container {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .carousel-images {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .carousel-slide {
+        background-size: contain;
+        background-position: center;
+        background-color: #1f1f1f;
+    }
+    
+    button {
+        padding: 8px;
+    }
+    
+    /* Garante que o botão WhatsApp fique no canto direito */
+    #whatsapp-button {
+        right: 10px !important;
+        left: auto !important;
+        margin-left: auto !important;
+        margin-right: 0 !important;
+    }
+    
+    /* Reduz espaçamento em telas muito pequenas */
+    #services-section {
+        padding: 12px 10px; /* Reduzido ainda mais */
+    }
+    
+    #services-section h2 {
+        margin-bottom: 8px; /* Reduzido ainda mais */
+    }
+    
+    .services-grid {
+        gap: 6px; /* Reduzido ainda mais */
+    }
+    
+    .service-item {
+        padding-bottom: 8px; /* Reduzido ainda mais */
+    }
+}
+
+/* --- Seção de Serviços --- */
+#services-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #111111;
+}
+
+#services-section h2 {
+    font-size: 2.5em;
+    color: #ececec;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: #1f1f1f;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 25px;
+    overflow: hidden;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.service-image {
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-bottom: 15px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.service-item:hover .service-image {
+    transform: scale(1.05);
+}
+
+.service-item h3 {
+    font-size: 1.4em;
+    margin: 0 15px;
+    line-height: 1.3;
+    min-height: 3.9em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    #services-section {
+        padding: 30px 15px; /* Reduzido de 40px para 30px */
+    }
+    #carousel {
+        height: 58vh;
+    }
+
+    #services-section h2 {
+        font-size: 2em;
+        margin-bottom: 20px; /* Reduzido de 30px para 20px */
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 15px; /* Reduzido de 20px para 15px */
+    }
+
+    .service-item {
+        margin: 0 auto;
+        max-width: 300px;
+        padding-bottom: 20px; /* Reduzido de 25px para 20px */
+    }
+
+    .service-image {
+        height: 200px;
+    }
+
+    .service-item h3 {
+        font-size: 1.2em;
+        min-height: auto;
+        margin: 0 10px;
+    }
+}
+
+/* --- Seção de Imagem Única --- */
+#single-image-section {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #f5f5f5;
+    overflow: hidden;
+}
+
+#single-image-section img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+@media (max-width: 768px) {
+    #single-image-section {
+        margin: 0;
+    }
+
+    #single-image-section img {
+        border-radius: 0;
+    }
+}
+
+/* --- Rodapé --- */
+#main-footer {
+    background-color: #2e3639;
+    color: #e0e0e0;
+    padding: 40px 20px 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto 30px;
+    gap: 30px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 280px;
+    padding: 15px;
+    text-align: center;
+}
+
+.footer-column h3 {
+    color: #ffffff;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.footer-column p {
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.footer-column p a {
+    color: #66cc66;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column p a:hover {
+    color: #44aa44;
+}
+
+.footer-button {
+    display: inline-block;
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 0.9em;
+    margin-top: 15px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.footer-button:hover {
+    background-color: #ffffff;
+    color: #2e3639;
+    border-color: #ffffff;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    margin-top: 30px;
+    font-size: 0.8em;
+    color: #a0a0a0;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+
+    .footer-column {
+        min-width: unset;
+        padding: 10px;
+    }
+
+    .footer-column h3 {
+        font-size: 1.1em;
+        margin-bottom: 10px;
+    }
+
+    .footer-column p {
+        font-size: 0.9em;
+    }
+
+    .footer-button {
+        padding: 8px 20px;
+        font-size: 0.85em;
+    }
+
+    .footer-bottom {
+        padding-top: 15px;
+        margin-top: 20px;
+        font-size: 0.75em;
+    }
+}
+
+/* --- Botão WhatsApp --- */
+#whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    /* Garante que sempre fique no canto direito */
+    left: auto !important;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+}
+
+#whatsapp-button img {
+    width: 60px;
+    height: 60px;
+    transition: transform 0.3s ease;
+}
+
+#whatsapp-button img:hover {
+    transform: scale(1.1);
+}
