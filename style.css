@@ -802,10 +802,7 @@ button:hover {
         padding-bottom: 0 !important;
     }
     
-    .carousel-slide img {
-        object-fit: cover; /* Preenche completamente para eliminar espaços vazios */
-        max-height: 200px;
-    }
+   
     
     /* Remove margens entre seções */
     #services-section {
@@ -846,10 +843,6 @@ button:hover {
         height: 150px; /* Aumentado para mostrar mais da imagem */
     }
     
-    .carousel-slide img {
-        object-fit: cover; /* Preenche completamente para eliminar espaços vazios */
-        max-height: 150px;
-    }
     
     /* Remove margens entre seções */
     #services-section {
