@@ -796,6 +796,10 @@ button:hover {
         height: 200px; /* Aumentado para mostrar mais da imagem */
         margin: 0 !important;
         padding: 0 !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
     }
     
     .carousel-slide img {
@@ -826,6 +830,14 @@ button:hover {
     #carousel {
         margin-bottom: 0 !important;
         padding-bottom: 0 !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+    
+    /* Remove espaçamento do container do carousel */
+    .carousel-container {
+        margin: 0 !important;
+        padding: 0 !important;
     }
 }
 
