@@ -1,118 +1,188 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Grupo Kronn - Header</title>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="CONTABILIDADE CONSULTIVA Os melhores programas e acesso à inovação da Contabilidade Consultiva você encontra aqui. Venha conhecer o nosso time, seja nosso"><meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"><link rel="canonical" href="https://grupokronn.com/" /><meta property="og:locale" content="pt_BR" /><meta property="og:type" content="website" /><meta property="og:title" content="Início - Grupo Kronn Contabilidade" /><meta property="og:description" content="CONTABILIDADE CONSULTIVA Os melhores programas e acesso à inovação da Contabilidade Consultiva você encontra aqui. Venha conhecer o nosso time, seja nosso" /><meta property="og:url" content="https://grupokronn.com/" /><meta property="og:site_name" content="Grupo Kronn Contabilidade" /><meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content="Início - Grupo Kronn Contabilidade" /><meta name="twitter:description" content="CONTABILIDADE CONSULTIVA Os melhores programas e acesso à inovação da Contabilidade Consultiva você encontra aqui. Venha conhecer o nosso time, seja nosso" /><title>Início - Grupo Kronn Contabilidade</title><link rel="stylesheet" href="style.css"><!-- Google Fonts --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Century+Gothic:wght@400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"><!-- Font Awesome para ícones --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="nav-left">
-                <div class="logo">
-                    <img src="logo.png" alt="Grupo Kronn">
-                </div>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <!-- Div 1: Logo -->
+            <div class="header-logo">
+                <a href="#">
+                    <img src="logo.png" alt="Padula Contabilidade" class="logo-img">
+                </a>
             </div>
-
-            <div class="hamburger">☰</div>
-
-            <div class="main-nav-links">
-                <ul class="menu">
-                    <li><a href="#">Início</a></li>
-                    <li><a href="#">Quem Somos</a></li>
-                    <li class="submenu">
-                        <a href="#">Nosso Serviços <span class="arrow">▼</span></a>
-                        <ul class="submenu-items">
-                            <li><a href="https://chatgpt.com/c/68800d38-e13c-8328-9931-6e0818620999">Abra sua Empresa</a></li>
-                            <li><a href="https://chatgpt.com/c/68800d38-e13c-8328-9931-6e0818620999">Alteração Contratual</a></li>
-                            <li><a href="https://chatgpt.com/c/68800d38-e13c-8328-9931-6e0818620999">Contabilidade Consultiva</a></li>
-                            <li><a href="https://www.exemplo.com/assessoria-fiscal-tributaria">Assessoria Fiscal e Tributária</a></li>
-                            <li><a href="https://www.exemplo.com/assessoria-trabalhista">Assessoria Trabalhista e Departamento Pessoal</a></li>
-                            <li><a href="https://www.exemplo.com/sistema-totalmente-informado">Sistema Totalmente Automatizado</a></li>
+            
+            <!-- Div 2: Navegação -->
+            <nav class="main-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#" class="nav-link">Quem Somos</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            Nossos Serviços <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="dropdown-link">Abra sua Empresa</a></li>
+                            <li><a href="#" class="dropdown-link">Alteração Contratual</a></li>
+                            <li><a href="#" class="dropdown-link">Certificado Digital</a></li>
+                            <li><a href="#" class="dropdown-link">Contabilidade Consultiva</a></li>
+                            <li><a href="#" class="dropdown-link">Assessoria Fiscal e Tributária</a></li>
+                            <li><a href="#" class="dropdown-link">Assessoria Trabalhista e Departamento Pessoal</a></li>
+                            <li><a href="#" class="dropdown-link">Sistema Totalmente Informatizado</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Trocar de Contador</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Trocar de Contador</a></li>
                 </ul>
+            </nav>
+            
+            <!-- Div 3: Acesso do Cliente -->
+            <div class="header-actions">
+                <div class="client-access">
+                    <ul class="access-menu">
+                        <li>
+                            <a href="https://portal.padula.com.br" class="access-link" target="_blank">
+                                Acesso do Cliente <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-
-            <div class="client-access-wrapper">
-                <ul class="client-access">
-                    <li><a href="#">Acesso ao Cliente</a></li>
-                </ul>
-            </div>
-        </nav>
+            
+            <button class="mobile-menu-toggle" aria-label="Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
     </header>
 
-    <section id="whatsapp-button">
-        <a href="https://web.whatsapp.com/send?phone=5521975215002" target="_blank" aria-label="Fale conosco pelo WhatsApp">
-            <img src="whatsap.png" alt="WhatsApp">
-        </a>
-    </section>
-
-    <section id="carousel">
+    <!-- Hero Section com Carrossel -->
+    <section class="hero-section">
         <div class="carousel-container">
-            <div class="carousel-images">
-                <div class="carousel-slide"><img src="f1.png" alt="Slide 1" /></div>
-                <div class="carousel-slide"><img src="f2.png" alt="Slide 2" /></div>
-                <div class="carousel-slide"><img src="f3.png" alt="Slide 3" /></div>
-                <div class="carousel-slide"><img src="f1.png" alt="Slide 4" /></div>
-                <div class="carousel-slide"><img src="f2.png" alt="Slide 5" /></div>
+            <div class="carousel-slides">
+                <div class="carousel-slide active">
+                    <img src="f1.png" alt="Contabilidade Consultiva" class="slide-image">
+                    <div class="slide-content">
+                        <h2 class="slide-title">Contabilidade Consultiva</h2>
+                        <p class="slide-description">Os melhores programas e acesso à inovação da Contabilidade Consultiva você encontra aqui.</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="f2.png" alt="Buscamos Satisfação dos Nossos Clientes" class="slide-image">
+                    <div class="slide-content">
+                        <h2 class="slide-title">Buscamos Satisfação dos Nossos Clientes</h2>
+                        <p class="slide-description">Comprometidos com a excelência e resultados para seu negócio.</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="f3.png" alt="Abertura, Regularização ou Baixa da Empresa" class="slide-image">
+                    <div class="slide-content">
+                        <h2 class="slide-title">Abertura, Regularização ou Baixa da Empresa</h2>
+                        <p class="slide-description">Processos simplificados e eficientes para sua empresa.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="carousel-btn prev" aria-label="Slide anterior">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="carousel-btn next" aria-label="Próximo slide">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <div class="carousel-indicators">
+                <button class="indicator active" data-slide="0"></button>
+                <button class="indicator" data-slide="1"></button>
+                <button class="indicator" data-slide="2"></button>
             </div>
         </div>
-        <button class="prev">&#10094;</button>
-        <button class="next">&#10095;</button>
     </section>
 
-    <section id="services-section">
-        <h2>CONFIRA NOSSOS SERVIÇOS</h2>
-        <div class="services-grid">
-            <a href="https://www.youtube.com/watch?v=BlfeNy520Wo&t=180s" class="service-item">
-                <div class="service-image" style="background-image: url('exemplo-img.png');"></div>
-                <h3>Contabilidade Consultiva</h3>
-            </a>
-            <a href="https://www.youtube.com/watch?v=BlfeNy520Wo&t=180s" class="service-item">
-                <div class="service-image" style="background-image: url('exemplo-img.png');"></div>
-                <h3>Assessoria Fiscal e Tributária</h3>
-            </a>
-            <a href="https://www.youtube.com/watch?v=BlfeNy520Wo&t=180s" class="service-item">
-                <div class="service-image" style="background-image: url('exemplo-img.png');"></div>
-                <h3>Abertura e Regularização de Empresas</h3>
-            </a>
-            <a href="https://www.youtube.com/watch?v=BlfeNy520Wo&t=180s" class="service-item">
-                <div class="service-image" style="background-image: url('exemplo-img.png');"></div>
-                <h3>Sistema Totalmente Informatizado</h3>
-            </a>
+    <!-- Seção de Serviços -->
+    <section class="services-section">
+        <div class="container">
+            <h2 class="section-title">CONFIRA NOSSOS SERVIÇOS</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="exemplo-img.png" alt="Contabilidade Consultiva">
+                    </div>
+                    <h3 class="service-title">Contabilidade Consultiva</h3>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="exemplo-img.png" alt="Assessoria Fiscal e Tributária">
+                    </div>
+                    <h3 class="service-title">Assessoria Fiscal e Tributária</h3>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="exemplo-img.png" alt="Abertura e Regularização de Empresas">
+                    </div>
+                    <h3 class="service-title">Abertura e Regularização de Empresas</h3>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="exemplo-img.png" alt="Sistema Totalmente Informatizado">
+                    </div>
+                    <h3 class="service-title">Sistema Totalmente Informatizado</h3>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="exemplo-img.png" alt="Certificado Digital">
+                    </div>
+                    <h3 class="service-title">Certificado Digital</h3>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="exemplo-img.png" alt="Assessoria Trabalhista">
+                    </div>
+                    <h3 class="service-title">Assessoria Trabalhista e Departamento Pessoal</h3>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="single-image-section">
-        <img src="f1.png" alt="Imagem de Destaque">
+    <!-- Seção de Imagem Única -->
+    <section class="single-image-section">
+        <img src="f1.png" alt="Imagem de Destaque" class="single-image">
     </section>
 
-    <footer id="main-footer">
-        <div class="footer-column">
-            <h3>Telefones para Contato:</h3>
-            <p><a href="tel:+552124156588">(21) 2415-6588</a></p>
-            <p><a href="tel:+552124162790">(21) 2416-2790</a></p>
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-title">Faça-nos uma visita, ou solicite uma apresentação.</h3>
+                <p class="footer-subtitle">Estamos prontos para atendê-lo.</p>
+                <!-- Ícone do WhatsApp removido daqui -->
+            </div>
         </div>
+        
+        <div class="footer-info">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h4 class="column-title">Telefones para Contato:</h4>
+                    <p><a href="tel:+55219997999043" class="phone-link">(21) 9 9799-9043</a></p>
+                </div>
+            </div>
+        </div>
+        
         <div class="footer-bottom">
-            <p>KRONN PLANEJAMENTO E ASSESSORIA LTDA registrada no 08.190.420/0001-90 | MATRIZ</p>
+            <p class="company-info">© 2024 Padula Contabilidade. Todos os direitos reservados.</p>
         </div>
     </footer>
 
+    <!-- Botão WhatsApp Flutuante -->
+    <div class="whatsapp-float">
+        <a href="https://web.whatsapp.com/send?phone=5521997999043" 
+           target="_blank" 
+           class="whatsapp-btn" 
+           aria-label="Fale conosco pelo WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
     <script src="script.js"></script>
-
-    <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            const btn = document.getElementById('whatsapp-button');
-            btn.style.opacity = '0';
-            btn.style.transition = 'opacity 0.8s ease';
-            setTimeout(() => {
-                btn.style.opacity = '1';
-            }, 300);
-        });
-    </script>
-
 </body>
 </html>
